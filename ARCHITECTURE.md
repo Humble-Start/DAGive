@@ -1,34 +1,37 @@
 DAGive/
-├─ contracts/
-│ ├─ CharityAllowlist.sol
-│ ├─ DonationRegistry.sol
-│ └─ scripts/
-│ ├─ deploy.ts
-│ └─ verify.ts
+├─ contracts/                     # EVM path (Solidity). See wasm/ for non-EVM.
+│  ├─ DonationRegistry.sol
+│  ├─ CharityAllowlist.sol
+│  ├─ libs/
+│  └─ scripts/
+├─ wasm/                          # Non-EVM path (e.g., Rust/WASM module skeleton)
+│  ├─ Cargo.toml
+│  └─ src/lib.rs
 ├─ frontend/
-│ ├─ app/
-│ │ ├─ layout.tsx
-│ │ └─ page.tsx
-│ ├─ lib/
-│ │ └─ wagmi.ts
-│ ├─ package.json
-│ ├─ tsconfig.json
-│ └─ .env.example
+│  ├─ app/                        # Next.js (App Router)
+│  ├─ components/
+│  ├─ lib/
+│  ├─ public/
+│  ├─ package.json
+│  └─ .env.example
 ├─ indexer/
-│ ├─ src/
-│ │ ├─ abis/
-│ │ │ └─ DonationRegistry.ts
-│ │ ├─ db.ts
-│ │ └─ listener.ts
-│ ├─ docker-compose.yml
-│ └─ package.json
-├─ hardhat.config.ts
-├─ package.json
-├─ .gitignore
+│  ├─ docker-compose.yml
+│  ├─ src/                        # small Node/TS listener -> Postgres
+│  └─ prisma/
+├─ docs/
+│  └─ architecture.md
 ├─ .github/
-│ └─ workflows/
-│ ├─ ci.yml
-│ └─ deploy-testnet.yml
-├─ .env.example
-├─ README.md
-└─ LICENSE
+│  ├─ workflows/
+│  │  ├─ ci.yml
+│  │  └─ deploy-testnet.yml
+│  ├─ ISSUE_TEMPLATE/
+│  │  ├─ bug_report.md
+│  │  └─ feature_request.md
+│  └─ CODEOWNERS
+├─ .env.example                   # root env for local dev
+├─ .gitignore
+├─ LICENSE
+├─ SECURITY.md
+├─ CODE_OF_CONDUCT.md
+├─ CONTRIBUTING.md
+└─ README.md
